@@ -48,7 +48,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f401_discovery.h"
 /* Include Gyroscope component driver */
-#include "..\Components\lsm303dlhc\lsm303dlhc.h"
+#include "lsm303dlhc.h"
    
 /** @addtogroup BSP
   * @{

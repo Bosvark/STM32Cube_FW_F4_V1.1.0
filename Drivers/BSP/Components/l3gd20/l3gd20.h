@@ -46,7 +46,7 @@
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "..\Common\gyro.h"
+#include "gyro.h"
 
 /** @addtogroup BSP
   * @{
