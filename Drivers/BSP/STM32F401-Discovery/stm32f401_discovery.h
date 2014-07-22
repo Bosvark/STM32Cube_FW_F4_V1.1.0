@@ -264,6 +264,12 @@ typedef enum
 #define ACCELERO_INT2_PIN                GPIO_PIN_5                  /* PE.05 */
 #define ACCELERO_INT2_EXTI_IRQn          EXTI9_5_IRQn 
 
+// Why, oh why were these not included from the start? Sloppy STM, very sloppy!
+void COMPASSACCELERO_IO_Init(void);
+void COMPASSACCELERO_IO_ITConfig(void);
+void COMPASSACCELERO_IO_Write(uint16_t DeviceAddr, uint8_t RegisterAddr, uint8_t Value);
+uint8_t COMPASSACCELERO_IO_Read(uint16_t DeviceAddr, uint8_t RegisterAddr);
+
 /**
   * @}
   */ 

@@ -577,13 +577,13 @@ void LSM303DLHC_MagInit(LSM303DLHCMag_InitTypeDef *LSM303DLHC_InitStruct)
   mr_regm |= (uint8_t) (LSM303DLHC_InitStruct->Working_Mode);
                     
   /* Write value to Mag MEMS CRA_REG regsister */
-  COMPASSACCELERO_IO_Write(MAG_I2C_ADDRESS, LSM303DLHC_CRA_REG_M, 1, &cra_regm);
+  COMPASSACCELERO_IO_Write(MAG_I2C_ADDRESS, LSM303DLHC_CRA_REG_M, cra_regm);
   
   /* Write value to Mag MEMS CRB_REG regsister */
-  COMPASSACCELERO_IO_Write(MAG_I2C_ADDRESS, LSM303DLHC_CRB_REG_M, 1, &crb_regm);
+  COMPASSACCELERO_IO_Write(MAG_I2C_ADDRESS, LSM303DLHC_CRB_REG_M, crb_regm);
 
   /* Write value to Mag MEMS MR_REG regsister */
-  COMPASSACCELERO_IO_Write(MAG_I2C_ADDRESS, LSM303DLHC_MR_REG_M, 1, &mr_regm);
+  COMPASSACCELERO_IO_Write(MAG_I2C_ADDRESS, LSM303DLHC_MR_REG_M, mr_regm);
 }
 
 /**
@@ -593,12 +593,8 @@ void LSM303DLHC_MagInit(LSM303DLHCMag_InitTypeDef *LSM303DLHC_InitStruct)
   */
 uint8_t LSM303DLHC_MagGetDataStatus(void)
 {
-  uint8_t tmpreg;
-  
   /* Read Mag STATUS register */
-  COMPASSACCELERO_IO_Read(MAG_I2C_ADDRESS, LSM303DLHC_SR_REG_M, 1, &tmpreg);
-                  
-  return tmpreg;
+  return COMPASSACCELERO_IO_Read(MAG_I2C_ADDRESS, LSM303DLHC_SR_REG_M);
 }
 #endif
 /**

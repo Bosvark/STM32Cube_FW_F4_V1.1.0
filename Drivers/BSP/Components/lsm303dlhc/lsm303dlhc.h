@@ -459,7 +459,15 @@ void      LSM303DLHC_AccClickITEnable(uint8_t ITClick);
 void      LSM303DLHC_AccClickITDisable(uint8_t ITClick);
 void      LSM303DLHC_AccZClickITConfig(void);
 
-#if 0
+#if 1
+typedef struct
+{
+  uint8_t Temperature_Sensor;                /* Temperature sensor enable/disable */
+  uint8_t MagOutput_DataRate;                /* OUT data rate */
+  uint8_t Working_Mode;                      /* operating mode */
+  uint8_t MagFull_Scale;                     /* Full Scale selection */
+}LSM303DLHCMag_InitTypeDef;
+
 /* Mag functions */ 
 void LSM303DLHC_MagInit(LSM303DLHCMag_InitTypeDef *LSM303DLHC_InitStruct);
 uint8_t LSM303DLHC_MagGetDataStatus(void);
